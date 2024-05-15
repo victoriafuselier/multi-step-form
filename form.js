@@ -26,7 +26,7 @@ function validateEmail(email) {
 }
 
 function validatePhone(phone) {
-    const phoneRegex = /^\d{3}[-. ]?\d{3}[-. ]?\d{4}$/;
+    const phoneRegex = /^\+?(\d{1,3})?[-. ]?\(?(\d{3})\)?[-. ]?(\d{3})[-. ]?(\d{4})$/;
     return phoneRegex.test(phone);
 }
 
@@ -87,14 +87,29 @@ function handlePreviousButtonClick() {
 
 function handleSubmitButtonClick(e) {
     if (input.value === '') {
-        e.preventDefault();
+        if (e !== null) {
+            e.preventDefault();
+        }
         displayError('Field cannot be blank');
     } else if (currentStep === 3 && !validatePhone(input.value)) {
+        if (e !== null) {
+            e.preventDefault();
+        }
         displayError('Invalid phone number format. Please try again');
     } else {
         form.innerHTML = `<h1>Done!<br>Thanks for signing up</h1>`;
     }
 }
+
+form.addEventListener('keydown', function (e) {
+    if (e.key === 'Enter' && currentStep !== 3) {
+      e.preventDefault();
+      handleNextButtonClick(e);
+    } else if (e.key === 'Enter' && currentStep === 3) {
+        e.preventDefault();
+        handleSubmitButtonClick(e);
+    }
+  });
 
 nextButton.addEventListener('click', handleNextButtonClick);
 previousButton.addEventListener('click', handlePreviousButtonClick);
