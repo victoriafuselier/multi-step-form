@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
+    <title>Multi-Step Form</title>
+</head>
+<body>
+    <form>
+        <h1>Tell us a little about yourself</h1>
+        <div class="progress-bar-container">
+            <div id="progress-bar-background" class="progress-bar"></div>
+            <div id="progress-bar-foreground" class="progress-bar"></div>
+        </div>
+        <label for="name">Name:</label>
+        <input type="text" id="name" required>
+        <p id="error-container"></p>
+        <button id="next-button" type="button">Next</button>
+        <button id="previous-button" type="button">Previous</button>
+        <button id="submit-button" type="submit">Submit</button>
+    </form>
+    <script src="form.js"></script>
+</body>
+</html>

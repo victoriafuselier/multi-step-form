@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #DEF3F1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Inter", sans-serif;
+    height: 100vh;
+}
+
+form {
+    background-color: #FFFFFF;
+    padding: 20px;
+    width: 85%;
+    border-radius: 5px;
+    max-width: 400px;
+    color: #39474D;
+}
+
+h1 {
+    font-size: 14px;
+    text-align: center;
+}
+
+.progress-bar-container {
+    margin: 15px 0px 60px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 10px;
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+#progress-bar-background {
+    background-color: #F3F6F9;
+    width: 100%;
+}
+
+#progress-bar-foreground {
+    background-color: #6AD9A3;
+    z-index: 1;
+    width: 30%;
+}
+
+input {
+    font-size: 20px;
+    padding: 10px;
+    border: 1px solid lightgrey;
+    border-radius: 5px;
+    margin: 5px 0px;
+    width: 100%;
+}
+
+#previous-button,
+#submit-button {
+    display: none;
+}
+
+#error-container {
+    margin: 5px 0px 10px;
+    font-size: 12px;
+    height: 14.5px;
+    color: red;
+}
+
+button {
+    padding: 10px;
+    border-radius: 5px;
+    color: white;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    letter-spacing: .5px;
+    font-size: 16px;
+    border: none;
+}
+
+#previous-button,
+#submit-button {
+    display: none;
+    width: 50%;
+}
+
+#previous-button {
+    float: left;
+    color: #39474D;
+}
+
+#submit-button {
+    background-color: #6AD9A3;
+}
+
+#next-button {
+    background-color: #39474D;
+    width: 100%;
+    display: inline;
+}
+
